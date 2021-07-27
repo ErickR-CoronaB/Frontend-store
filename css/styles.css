@@ -1,0 +1,287 @@
+:root{/*Seudo seldectores para cerar custom properties*/
+    /*Creando una paleta de colores*/    
+    --primario: rgba(49, 131, 140);
+    --primario-oscuro:rgba(35, 91, 97);
+    --secundario:rgb(255, 206, 0);
+    --secundario-oscuro: rgb(255, 189, 27);
+    --blanco: rgba(255, 255, 255);
+    --negor:rgba(0, 0, 0);
+
+    /****Font size*****/
+    --titulo-prnsipal: 4rem;
+    --titulo-secundario: 3.2rem;
+    --titulo-terciario: 2.4rem;
+
+    /*****Font family*****/
+    --fuente-prinsipal: 'Staatliches', cursive;
+    --fuente-secundaria: Arial, Helvetica, sans-serif;
+}
+
+
+/**************Globals******************/
+/*Reinciando el estilo de la pagina web*/
+/* apply a natural box layout model to all elements, but allowing components to change */ 
+
+html{
+    font-size: 62.5%;/*Areglo para usar rem's*/
+    box-sizing: border-box; /*Box model hack*/
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;/*Box model hack*/
+}
+
+body{
+    background-color: var(--primario);
+    font-size: 1.6rem;/*1rem = 10px*/
+    /*Line spacing */
+    line-height: 1.5;/*from the base of the fornt*/
+    font-family: 'Staatliches', cursive;
+}
+
+p{
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+}
+
+.conteiner{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+h1, h2, h3{
+    text-align: center;
+    color: var(--secundario);
+}
+
+h1{
+    font-size: var(--titulo-prnsipal);
+}
+
+h2{
+    font-size: var(--titulo-secundario);
+}
+
+h3{
+    font-size: var(--titulo-terciario);
+}
+
+/*Usin BEM in this proyect*/
+
+/*Heder*/
+
+.header{
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo{/*Aanother form would be the next line
+    margin: 0 auto 0 auto;*/
+    margin: 3rem 0;
+}
+
+/*Footer*/
+.footer{
+    background-color: var(--primario-oscuro);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}/*Aanother form would be the next line
+    margin: 0 auto 0 auto;*/
+
+.footer__copyright{
+    text-align: center;
+    font-family: var(--fuente-primaria);
+    font-size: 2.2rem;
+}
+
+/*Navegation*/
+
+.navegation{
+    background-color: var(--primario-oscuro);
+    padding: 1rem 0;
+    display: flex;
+    justify-content:center;
+    gap: 2rem; /*new separation form*/
+}
+
+.navegation__link{
+    color: var(--blanco);
+    font-size: 3rem;
+    margin-right: 2rem;/*Old reparation form*/
+}
+
+/*Removing space of the last element*/
+.navegation__link:last-of-type{
+    margin-right: 0;
+}
+
+.navegation__link--active,
+.navegation__link:hover{
+    color: var(--secundario);
+}
+
+/*Grid*/
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);/*fr = freccion*/
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.products{
+    background-color: var(--primario-oscuro);
+    padding: 1rem;
+}
+
+
+.product__name{
+    font-size: 4rem;
+}
+
+.product__price{
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
+
+.product__name, 
+.product__price{
+    font-family: var(--fuente-prinsipal);
+    margin: 1rem, 0;
+    text-align:center;
+    /*Line spacing*/
+    line-height: 1.2rem;
+}
+
+/*Graphics*/
+
+.graphic{
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1/3;/*De la columna 1 a 3*/
+}
+
+.graphic--shirt{
+    grid-row: 2/3;
+    background-image: url(../img/grafico1.jpg);
+    
+}
+
+.graphic--node{
+    grid-row: 8/9;
+    background-image: url(../img/grafico2.jpg);
+}
+
+@media (min-width: 768px) {
+    .graphic--node{
+        grid-column: 2/4;
+        grid-row: 5/6;
+    }
+}
+
+/**Us pege**/
+
+.us{
+    display: grid;
+    grid-template-rows: repeat (2,auto);
+    column-gap: 2rem;
+}
+
+@media (min-width: 768px){
+    .us{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .us__img{
+        grid-column: 2 / 3;
+    }
+}
+
+.us__img{
+    grid-row: 1 / 2;
+}
+
+/*Blocks*/
+
+.blocks{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .blocks{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+}
+
+/*Centering content*/
+.blocks{
+    text-align: center
+}
+
+.title__block{
+    margin:0;
+}
+
+/**Product page**/
+@media (min-width: 768px) {
+    .shirt{
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+/** Formulary **/
+.formulary{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.formulary__field{
+
+    border: 1rem solid var(--primario-oscuro);
+    /*Aanother form would be the next line
+    border-color: var(--primario-oscuro);
+    border-width: 1rem;
+    border-style: solid;*/
+
+    background-color: transparent;
+    color: var(--blanco);
+    font-size: 2rem;
+    font-family: var(--fuente-secundaria);
+    text-align: center;
+    padding: 2rem;
+    appearance: none;
+}
+
+.formulary__submit{
+    background-color: var(--secundario);
+    border: none;
+    font-size: 2rem;
+    padding: 2rem;
+    transition: background-color 0.2s ease;
+    grid-column: 1 / 3;
+}
+
+.formulary__submit:hover{
+    cursor: pointer;
+    background-color: var(--secundario-oscuro);
+}

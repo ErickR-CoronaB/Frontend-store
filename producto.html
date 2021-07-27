@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"><!--Language-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer store</title>
+    <!--Normalizing the web page-->
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <!--Google's font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet"> 
+
+    <!--Loading the styles of the web page-->
+	<link rel="preload" href="css/styles.css" as="style">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!--Preventing the favicon.ico error in HTML5-->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html">
+            <img class="header__logo" src="img/logo.png" alt="Logotipo">
+        </a>
+    </header>
+
+    <nav class="navegation"><!--Navegation-->
+        <a class="navegation__link" href="index.html">Tienda</a>
+        <a class="navegation__link navegation__link--active" href="nosotros.html">Nosotros</a>
+    </nav><!--End navegation-->
+
+    <main class="conteiner">
+        <h1>REact JS</h1>
+
+        <div class="shirt">
+            <img class="shirt__img" src="/img/3.jpg" alt="imajen del producto">
+
+            <div class="shirt__content">
+                <p>
+                    Dolor sit amet consectetur, adipisicing elit. Consequuntur 
+                    quia optio obcaecati eum. Dolores, repellat perferendis! 
+                    Sit quod cum sequi quibusdam doloribus vitae cumque aliquid 
+                    delectus, tempora, atque, harum dolorem.
+                </p>
+
+                <form class="formulary">
+                    <select class="formulary__field">
+                        <!--Desactivando la primera opcion y marcandola como por defecto-->
+                        <option disabled selected>-- Seleccione Talla --</option>
+                        <option>Chica</option>
+                        <option>Mediana</option>
+                        <option>Garande</option>
+                    </select>
+                    <input class="formulary__field" type="number" placeholder="Cantidad" min="1">
+                    <input class="formulary__submit" type="submit" value="Agregar al carrito">
+                </form>
+
+            </div><!--End shirt__content-->
+        </div><!--End shirt-->
+
+    </main>
+
+    <footer class="footer">
+        <p class="footer__copyright">&copy; Front End Store - Todos los derechos reservados 2022.</p>
+    </footer><!--End footer-->
+</body>
+</html>
